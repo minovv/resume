@@ -1,0 +1,39 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with main}}
+    <main>
+        <div>
+        {{> title data='My Education' big=true}}
+        {{#each educations}}
+        <ul>
+            <li>{{name}}
+                {{year}}
+                {{#unless isEnd includeZero=false}} (in Progress) {{/unless}}
+        </li>
+        </ul>
+        {{/each}}
+        </div>
+        <br/>
+        <div>
+        {{> title data='My Certificates'}}
+        {{#each certificates}}
+        <ul>
+            <li>{{name}}
+                ({{id}})
+            </li>
+        </ul>
+        {{/each}}
+        </div>
+    </main>
+    {{/with}}
+
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}

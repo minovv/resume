@@ -1,0 +1,53 @@
+<footer>
+    {{#with header}}
+       <div>{{name.firstname}} {{name.lastname}}</div>
+    
+    <div>
+        <address>{{address}}</address>
+    </div>            
+    {{/with}}
+
+    {{#with footer}}
+        <hr>
+        <br>
+        <div>
+           {{#with social}}
+             <div>
+              
+              <div>
+                <address>Email me: {{> link text=email.text href=email.href blank=true noLine=true}}</address>
+              </div>          
+            
+             </div>
+             <div>
+              
+              <div>
+                <address>Call me: {{> link text=mobilephone.text href=mobilephone.href blank=true noLine=true}}</a></address>
+              </div>
+             
+             </div>
+             <div>
+              
+              <div><address>Let's Connect: {{> link text=linkedin.text href=linkedin.href blank=true noLine=true}}</a></address></div>
+              
+             </div>  
+             <div>
+              
+              <div><address>Explore my Projects: {{> link text=projects.text href=projects.href blank=true noLine=true}}</a></address></div>
+              
+              
+             </div>
+              <hr>
+                    
+       
+             {{/with}} 
+        </div>
+        <br/>
+        {{!-- <div>
+           
+            <em>Copyright by {{../header/name.firstname}} {{../header/name.lastname}} </em>
+            
+        </div> --}}
+        <br/>
+    {{/with}}
+</footer>
