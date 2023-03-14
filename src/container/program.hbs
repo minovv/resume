@@ -6,41 +6,91 @@
         {{#each this}}
         <div>
             <h2>{{name}}</h2>
+            {{#with location}}
             <p>
-                
+                Summer trip 2023 to {{city}}, {{country}}!
             </p>
-               
+            {{/with}}
+
             <div>
                 <em>Tour starts on {{date}}</em>
             </div>
             <br>
-            <hr>
+          
             {{#each program}}
             <div>
-                <h3>Excursion</h3>
                 <ul>
-                    <li>{{name}}</li>
-                    <li>{{type}} ({{duration}} hours)</li>
+                    <li><b>{{name}}:</b> {{type}} ({{duration}} hours)</li>
+                    
                     {{#with details}}
 
                     {{#if museum}}
-                    <li>{{museum.name}}</li>
+                    <br>
+                    <b>{{museum.name}}</b>
                     {{/if}}
                     {{#with museum}}
                     {{#with location}}
-                    {{address}}, {{city}}, {{country}}
+                    <address>{{address}}, {{city}}, {{country}}</address>
                     {{/with}}
+                    
+                    <div>
+                        <p>
+                            Opportunity to visit famous exhibits like...
+                        </p>
+                    </div>
+                    {{#each exhibits}}
+                    <br>
+                    <ul>
+                    <li>
+                        "{{name}}",
+                        {{#if artist}}
+                        {{artist}}: {{description}}
+                        {{else}}
+                        {{description}}
+                        {{/if}}
+                        {{#if audio_guide}}
+                        <div><em>Audio guide included</em></div>
+                        {{/if}}
+                    </li>
+                    </ul>
+                                        
+                    
+                    {{/each}}
+                   
+                    {{/with}}
+                    
+
+                    
+                    {{#if venue}}
+                    <br>
+                    <b>{{venue.name}}</b>
+                    {{/if}}
+                    {{#with venue}} 
+                                                                               
+                    {{#with location}}
+                    <div>
+                        <address>
+                            {{address}}, {{city}}, {{country}}
+                        </address>
+                    </div>
+                    {{/with}}
+                    
                     {{/with}}
 
-                    {{#each details.museum.exhibits}}
-                    <li>{{name}}</li>
-                    {{/each}}
-                    </ul>
                     
-                                     
+                    {{#each performers}}
+                    <br>                    
+                    <ul>
+                        <li>{{name}} ({{type}})</li>
+                    </ul>
+                    {{/each}}
+                    
+                                  
+                               
                     {{#with guide}}
-                    <div><b>Your {{language}} Guide name is {{name}} ({{rating}} points)</b></div>
-                    {{/with}}                
+                    <div><p>Your {{language}} Guide name is {{name}} ({{rating}} points)</p></div>
+                    {{/with}}
+                    </ul>                
                     {{/with}}
                 
             {{/each}}
