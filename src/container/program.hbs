@@ -1,0 +1,51 @@
+<div>
+    {{#with program}}
+    <main>
+        <div> {{> title data='Program' big=true}} </div>
+        <br>
+        {{#each this}}
+        <div>
+            <h2>{{name}}</h2>
+            <p>
+                
+            </p>
+               
+            <div>
+                <em>Tour starts on {{date}}</em>
+            </div>
+            <br>
+            <hr>
+            {{#each program}}
+            <div>
+                <h3>Excursion</h3>
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{type}} ({{duration}} hours)</li>
+                    {{#with details}}
+
+                    {{#if museum}}
+                    <li>{{museum.name}}</li>
+                    {{/if}}
+                    {{#with museum}}
+                    {{#with location}}
+                    {{address}}, {{city}}, {{country}}
+                    {{/with}}
+                    {{/with}}
+
+                    {{#each details.museum.exhibits}}
+                    <li>{{name}}</li>
+                    {{/each}}
+                    </ul>
+                    
+                                     
+                    {{#with guide}}
+                    <div><b>Your {{language}} Guide name is {{name}} ({{rating}} points)</b></div>
+                    {{/with}}                
+                    {{/with}}
+                
+            {{/each}}
+        {{/each}}
+    </main>
+    {{/with}}      
+</div>
+
