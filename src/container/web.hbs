@@ -1,0 +1,90 @@
+<div>
+    <main>
+        <div>{{> title data='Web' big=true}}</div>
+
+        {{#with web}}
+        {{#each languages}}
+        <ul>
+            <li><b>{{name}}</b></li>
+            <div>Version: {{version}}</div>
+            <div>Short description: {{description}}</div>
+            <br>
+
+            {{#each properties}}
+            <p>
+                <ul>
+                    <li><b>{{name}}: {{description}}</b></li>
+                                                            
+                
+
+                
+                {{#if values}}
+                <ul>
+                {{#each values}}
+                <li>{{value}}: {{description}}</li>
+                
+                {{/each}}
+                {{/if}}
+                </ul>
+
+                {{#if parameters}}
+                {{#each parameters}}
+                {{name}}
+                {{type}}
+                {{description}}
+                {{/each}}
+                {{/if}}
+                </ul>              
+            </p>    
+            {{/each}}
+
+            
+            {{#each elements}}
+            
+            <ul>
+                <li><b>Element: {{name}}</b></li>               
+                         
+                {{description}}
+                
+
+                <p>Attributes</p>
+                {{#each attributes}}
+                <ul>
+                    <li>{{name}}: {{description}}</li>
+                    
+                </ul>
+                <br>
+                {{/each}}               
+                
+            </ul>
+            {{/each}}
+
+            {{#each functions}}
+            <ul>
+                <li><b>Function: {{name}}</b></li>
+                <div>                    
+                <p>Function Description: {{description}}</p>
+                </div>
+
+                {{#each parameters}}
+                <ul>
+                    <li>Parameter: {{name}} (type: {{type}})</li>
+                    <div>
+                        <p>Description:                            
+                    {{description}} 
+                        </p>
+                    </div>
+                   
+                </ul>
+                <br>
+                {{/each}}
+                
+            </ul>
+            {{/each}}
+                    
+           
+        </ul>        
+        {{/each}}
+        {{/with}}
+    </main>
+</div>
