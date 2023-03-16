@@ -1,0 +1,102 @@
+<div>
+    <main>
+        <div>
+            <div>{{> title data='Mac' big=true}}</div>
+
+            <div>
+                {{#if name}}
+                <h2>{{name}}</h2>
+                {{/if}}
+                <p>
+                    {{#if description}}
+                    {{description}}
+                    {{/if}}
+                </p>
+                <p>
+                    <ul>
+                        {{#if price}}
+                        <li>Price: {{price}}</li>
+                        {{/if}}
+                        {{#if category}}
+                        <li>Category: {{category}}</li>
+                        {{/if}}
+                    </ul>
+                </p>
+                <br>
+                 <div>
+                    <h2>Features</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptates omnis provident veritatis dolore quos, quae temporibus tempore debitis sunt dolorum illum, accusantium aspernatur. Facere illum laboriosam sed distinctio consequatur.
+                    </p>
+                    <p>
+                <b>Processor</b>
+               {{#if features}}
+               <ul>
+                <li>Brand: {{features.processor.brand}}</li>
+                <li>Model: {{features.processor.model}}</li>
+                <li>Speed: {{features.processor.speed}}</li>
+                <li>Cores: {{features.processor.cores}}</li>
+                <li>Cache: {{features.processor.cache}}</li>               
+                </ul>      
+                {{/if}} 
+            </p>
+            <p>
+                <b>Memory</b>
+               {{#if features}}
+               <ul>
+                <li>Type: {{features.memory.type}}</li>
+                <li>Syze: {{features.memory.size}}</li>
+                <li>Speed: {{features.memory.speed}}</li>              
+               </ul>      
+                {{/if}} 
+            </p>
+            <br>
+            <p>
+                <b>Storage</b>
+               {{#if features}}
+               <ul>
+                <li>Type: {{features.storage.type}}</li>
+                <li>Syze: {{features.storage.size}}</li>          
+               </ul>      
+                {{/if}} 
+            </p>
+            <p>
+                <b>Display</b>
+               {{#if features}}
+               <ul>
+                <li>Syze: {{features.display.size}}</li>
+                <li>Resolution: {{features.display.resolution}}</li>
+                <li>Technology: {{features.display.technology}}</li>
+                <li>Color space: {{features.display.color_space}}</li> 
+                <li>Brightness: {{features.display.brightness}}</li>
+                <li>Refresh rate: {{features.display.refresh_rate}}</li>         
+               </ul>      
+                {{/if}} 
+            </p>
+            <p>
+                <b>Graphics</b>
+               {{#if features}}
+               <ul>
+                <li>Brand: {{features.graphics.brand}}</li>
+                <li>Model: {{features.graphics.model}}</li>
+                <li>Memory: {{features.graphics.memory}}</li>        
+               </ul>      
+                {{/if}} 
+            </p>
+            <p>
+                <b>Ports</b>
+                          
+                   
+                    
+                
+            </p>
+                </div>
+
+                
+            </div>
+
+
+
+        </div>
+    </main>
+</div>
