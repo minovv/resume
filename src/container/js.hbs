@@ -1,0 +1,108 @@
+<div>
+    <main>
+        {{> title data='JS' big=true}}
+
+        {{#if name}}
+        <div><h2>About {{name}}</h2></div>        
+        {{/if}}
+
+        <div>
+            {{#if description}}
+            <p>
+        {{description}}        
+            </p>
+            {{/if}}
+        </div>
+        
+        <div>
+            {{#with history}}
+            <p>
+                Available since {{year}}, developed by {{founder}}.
+            </p>
+            {{/with}}
+        </div>
+
+        <div>
+            <p>
+                <b>Types of Data</b>
+            {{#each types}}                          
+                <ul>
+                <li>{{this}}</li>
+                </ul>
+            </p>
+            {{/each}}
+        </div>
+
+        <div>
+            <p>
+            <b>Syntax</b>
+            {{#with syntax}}
+                          
+                <ul>
+                <li>Variables: {{variables}}</li>
+                <li>Functions: {{functions}}</li>
+                <li>Conditionals: {{conditionals}}</li>
+                <li>Loops: {{loops}}</li>
+                <li>Classes: {{classes}}</li>
+                </ul>
+            </p>
+            {{/with}}
+        </div>
+
+        <div>
+            <p>
+                <b>Features</b>
+                {{#each features}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+            </p>
+                {{/each}}
+        </div>
+
+        <div>
+            <p>
+                <b>Libraries</b>
+                {{#each libraries}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+            </p>
+                {{/each}}
+        </div>
+
+        <div>
+            <p>
+                <b>Tools</b>
+                {{#each tools}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+            </p>
+                {{/each}}
+        </div>
+
+        <div>
+            <p>
+                <b>Community</b>                
+                {{#each community}}
+                <ul>
+                    <li>{{name}} ({{type}})</li>
+                </ul>
+            </p>
+                {{/each}}
+        </div>
+
+        
+
+        
+        
+
+        
+
+        
+
+
+
+    </main>
+</div>
