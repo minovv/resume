@@ -5,7 +5,7 @@
 
             <div>
                 {{#if name}}
-                <h2>{{name}}</h2>
+                <h3>{{name}}</h3>
                 {{/if}}
                 <p>
                     {{#if description}}
@@ -24,7 +24,7 @@
                 </p>
                 <br>
                  <div>
-                    <h2>Features</h2>
+                    <h4>Features</h4>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptates omnis provident veritatis dolore quos, quae temporibus tempore debitis sunt dolorum illum, accusantium aspernatur. Facere illum laboriosam sed distinctio consequatur.
                     </p>
@@ -50,7 +50,7 @@
                </ul>      
                 {{/if}} 
             </p>
-            <br>
+            
             <p>
                 <b>Storage</b>
                {{#if features}}
@@ -85,12 +85,79 @@
             </p>
             <p>
                 <b>Ports</b>
-                          
-                   
-                    
+                {{#with features}}
+                <ul>
+                {{#each ports}}
+                <li>Type: {{type}}</li>
+                <li>Count: {{count}}</li>
+                {{#if features}}
+                <li>Features:</li>
+                {{/if}}
+
+                {{#if features}}
+                <ul>
+                {{#each features}}
+                <li>{{this}}</li>
+                {{/each}}
+                {{/if}}
+                </ul>
+
+                {{/each}}
+               </ul>
+                {{/with}}                     
+                                      
+            </p>
+            <p>
+                <b>Battery</b>
+                 {{#if features}}
+               <ul>
+                <li>Type: {{features.battery.type}}</li>
+                <li>Capacity: {{features.battery.capacity}}</li>
+                <li>Life: {{features.battery.life}}</li>        
+               </ul>      
+                {{/if}}          
+            </p>
+            <p>
+                <b>Weight</b>
+                 {{#if features}}
+               <ul>
+                <li>Weight: {{features.weight}}</li>
+                </ul>                
+                {{/if}}          
+            </p>
+            <p>
+                <b>Dimensions</b>
+                 {{#if features}}
+               <ul>
+                <li>Height: {{features.dimensions.height}}</li>
+                <li>Width: {{features.dimensions.width}}</li>
+                <li>Depth: {{features.dimensions.depth}}</li>                
+                {{/if}}
+                </ul>           
+            </p>
+            <p>
+                <b>Operating System</b>
+                 {{#if features}}
+               <ul>
+                <li>{{features.operating_system}}</li>
+                </ul>                
+                {{/if}}          
+            </p>
+            <p>
+                <b>Accessories</b>
+                {{#with features}}
+                 {{#if accessories}}
+                 {{#each accessories}}
+               <ul>
+                <li>{{name}}: <b>${{price}}</b></li>
                 
+                </ul>
+                {{/each}}                
+                {{/if}}
+                {{/with}}          
             </p>
                 </div>
+
 
                 
             </div>
