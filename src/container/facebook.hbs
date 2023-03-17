@@ -1,0 +1,87 @@
+<div>
+    <main>
+        <div>{{> title data='Facebook' big=true}}</div>
+        <div>
+            <p>
+                <b>Users</b>           
+            {{#if users}} 
+                       
+            {{#each users}}
+            
+            <ul>           
+            <li>(ID: {{id}}), {{name}} - {{gender}}, {{age}} years old</li>           
+            </ul>
+            
+            
+
+            
+            <b>Friends</b>                  
+            {{#if friends}}
+            {{#each friends}}
+            
+            <li>(ID: {{id}}), {{name}} - {{gender}}, {{age}} years old</li>
+           
+
+            
+                <b>Mututal Friends</b>
+            {{#if mutual_friends}}
+            {{#each mutual_friends}}
+            
+            <li>(ID: {{id}}), {{name}} - {{gender}}, {{age}} years old</li>
+            
+            {{/each}}
+            {{/if}}
+           
+            <b>Groups</b>
+            {{#if groups}}
+            {{#each groups}}
+            
+            <li>(ID: {{id}}), {{name}} - {{description}}</li>
+           
+            <b>Group Members</b>
+            {{#if members}}
+            {{#each members}}
+            (ID: {{id}}), {{name}} - {{gender}}, {{age}} years old
+            {{/each}}
+            {{/if}}
+            
+            {{/each}}
+            {{/if}}
+
+            
+            
+            {{/each}}
+            {{/if}}
+
+            {{!-- <b>Groups</b> --}}
+            {{#if groups}}
+            {{#each groups}}
+            
+            <li>(Group ID: {{id}}), {{name}} - {{description}}</li>
+            <b>Group Members</b>
+            {{#if members}}
+            {{#each members}}
+            (ID: {{id}}), {{name}} - {{gender}}, {{age}} years old
+            {{/each}}
+            {{/if}}
+
+            {{/each}}
+            {{/if}}
+
+           
+           
+
+            
+
+                      
+            {{/each}}
+            {{/if}}   
+           
+         
+       
+         
+                
+        </p>
+        </div>
+    </main>
+</div>
