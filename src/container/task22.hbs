@@ -1,0 +1,83 @@
+<div>
+    <main>
+        {{!-- H1 Heading  --}}
+        {{#with page_header}}
+        <p class="h1">{{title}}</p>
+        <p class="text-uppercase">{{description}}</p>
+         {{/with}}
+
+                  
+
+        {{!-- Section --}}
+        {{#with section}}
+        {{#with about_us}}
+        {{#with title_list}}
+       
+        <p class="display-6 text-end">{{main}}</p>
+        <p class="h2 text-end">{{sub}}</p>
+        <br>                      
+        {{/with}}
+
+        {{#with button}}
+        <button type="button" class="btn btn-outline-info">{{text}}</button>
+        {{/with}}
+
+        {{/with}}
+        {{/with}}
+        {{!-- End of section --}}
+
+        {{!-- Advantage --}}
+        {{#with section}}
+        {{#with advantage}}
+        <p class="display-5">{{title}}</p>
+        {{#with efficiency}}
+        <p class="display-4">{{title}}</p>
+        <p class="h6">{{sub_title}}</p>
+        <p>{{description}}</p>
+        <br>
+        <button type="button" class="btn btn-outline-warning" >{{button}}</button>
+        {{/with}}
+
+        {{!-- innovation --}}
+        {{#with innovation}}
+        <p class="display-4 text-center">{{title}}</p>
+        <p class="h6 text-center">{{sub_title}}</p>
+        <p>{{description}}</p>
+        <br>
+        <button type="button" class="btn btn-outline-warning" >{{button}}</button>
+        {{/with}}
+        {{!-- collaboration --}}       
+        {{#with collaboration}}
+        <p class="display-4 text-end">{{title}}</p>
+        <p class="h6 text-end">{{sub_title}}</p>
+        <p>{{description}}</p>
+        <br>
+        <button type="button" class="btn btn-outline-warning" >{{button}}</button>
+        {{/with}}
+        {{/with}}
+        {{/with}}
+        
+
+        {{!-- Agreement --}}
+        {{#with section}}
+        {{#with agreement}}
+        <p class="display-5">{{title}}</p>
+        {{#with info}}
+        <p class="h5">{{sub_title}}</p>
+        {{#with detail}}
+        <p>{{text}}</p>
+        <br>
+        <button type="button" class="btn btn-success" >{{button}}</button>
+        {{/with}}
+        {{/with}}
+        {{/with}}
+        {{/with}}
+       
+
+
+       
+        
+        
+        
+    </main>
+</div>
