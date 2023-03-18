@@ -1142,9 +1142,7 @@ router.get('/bootstrap', function (req, res) {
 
 // ================================================================
 
-// ================================================================
 
-// router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/task21', function (req, res) {
@@ -1203,7 +1201,7 @@ router.get('/task21', function (req, res) {
       },
       list_name: [
         {
-          text: 'GitHub',
+          text: 'Github',
           url: 'https://github.com/',
         },
         {
