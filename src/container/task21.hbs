@@ -137,6 +137,12 @@
             <a href="{{url}}" target="_parent"><button type="button" class="btn btn-link">{{text}}</button></a>
         </p>
         {{/with}}
+
+        {{#each list_name}}
+        <ul>
+            <li><a href="{{url}}" target="_parent"><button type="button" class="btn btn-link">{{text}}</button></a></li>
+        </ul>
+        {{/each}}
        
        </div>
        {{/with}}
