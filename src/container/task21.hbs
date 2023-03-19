@@ -1,0 +1,152 @@
+<div>
+    <main>
+        {{!-- H1 heading --}}
+        
+        {{#with heading}}
+        {{#with main}}
+        <div class="container">
+            <p class="h1">{{title}}</p>
+        
+            <p>
+                {{text}}
+            </p>
+        
+        <br>
+        {{#with button_text}}
+        <button type="button" class="btn btn-primary">
+            {{solid}}
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-primary">
+            {{outline}}
+        </button>
+        </div>
+        {{/with}}
+        {{/with}}
+        <br>
+        <br>
+
+        {{!-- Heading 2 --}}
+
+        {{#with second}}
+        <div class="container">
+            <p class="h2">{{title}}</p>
+        
+            <p>
+                {{text}}
+            </p>
+        
+        <br>
+        {{#with button_text}}
+        <button type="button" class="btn btn-secondary">
+            {{solid}}
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-secondary">
+            {{outline}}
+        </button>
+        </div>
+        {{/with}}
+        {{/with}}
+        <br>
+        <br>
+
+         {{!-- H3 heading subblock--}}
+       
+        {{#with subblock}}
+        <div class="container">
+            <p class="h3">{{title}}</p>
+        
+            <p>
+                {{text}}
+            </p>
+        
+        <br>
+        {{#with button_text}}
+        <button type="button" class="btn btn-dark">
+            {{solid}}
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-dark">
+            {{outline}}
+        </button>
+        </div>
+        {{/with}}
+        {{/with}}
+        <br>
+        <br>        
+        {{!-- End of heading --}}
+        {{/with}}
+
+        {{!-- Display 1 nested --}}
+        {{#with nested_display}}
+        <div class="container">
+
+            <p class="display-1">
+                 {{title}}
+            </p>
+            {{!-- Display 4 children --}}
+            {{#with children_display}}
+            <div class="container">
+                <p class="display-4">{{title}}</p>
+                <p>{{text}}</p>
+            </div>
+            {{/with}}
+             
+       {{#with button}}
+       <button type="button" class="btn btn-outline-warning">
+            {{text}}
+        </button>
+        {{/with}}
+        
+
+        <br>
+        <br>
+        {{!-- H6 heading --}}
+        {{#if header_text}}
+        <p class="h6">
+            {{header_text}}
+        </p>
+        {{#with button}}
+        <button type="button" class="btn btn-info">
+            <span class="text-light">{{text}}</span>
+        </button>
+       </div>
+       {{/with}}
+       {{/if}}       
+       <br>
+       <br>
+        {{!-- End of heading --}}
+        {{/with}}
+
+        {{!-- Paragraph --}}
+        {{#with paragraph}}
+       <div>
+        
+        <p class="text-uppercase">
+            {{title}}
+        </p>
+        <p>
+            {{text}}
+        </p>
+        {{#with button}}
+        <p>
+            <a href="{{url}}" target="_parent"><button type="button" class="btn btn-link">{{text}}</button></a>
+        </p>
+        {{/with}}
+
+        {{#each list_name}}
+        <ul>
+            <li><a href="{{url}}" target="_parent"><button type="button" class="btn btn-link">{{text}}</button></a></li>
+        </ul>
+        {{/each}}
+       
+       </div>
+       {{!-- End --}}
+       {{/with}}
+        
+    </main>
+</div>
