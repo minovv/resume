@@ -1,32 +1,80 @@
-<main>
-    <div class="row-4">
-        <button type="button" class="btn btn-link">Link</button>
-        <button type="button" class="btn btn-link">Link</button>
-        <button type="button" class="btn btn-link">Link</button>
-        <button type="button" class="btn btn-primary">Primary</button>
+<main> 
+    {{!-- Navigation  --}}
+    <div>
+    {{#with navigation}}
+    {{#if links}}
+    {{#each links}}
+    <a href="{{href}}" type="button" class="btn btn-link">{{text}}</a>
+    {{/each}}    
+    {{/if}}
+
+    {{#with button}}    
+    <a href="{{href}}" type="button" class="btn btn-primary">{{text}}</a>    
+    {{/with}}
+    {{/with}}    
     </div>
     <hr>
+    {{!-- Header --}}
     <div>
-        <div class="h1">H1 Heading</div>
-        <p>paragraph</p>
-        <button type="button" class="btn btn-primary">Primary</button>
+        {{#with header}}
+        <div class="h1">{{title}}</div>
+        <p>{{description}}</p>
+        {{#with button}}
+        <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+        {{/with}}
     </div>
-    <section class="col-12">
-        <div class="h2">H2 Heading</div>
+         {{/with}}
 
+         {{!-- City title --}}
+         {{#with city}}
+    <section class="col-12">
+        <div class="h2">{{title}}</div>
+        {{/with}}
+
+       {{!-- Cards --}}
+        {{#with city}}
+        {{#with cards}}
         <div class="row gy-2 gx-2">
             <div class="col-6">
+                
+                 {{#if cards}}
+                 {{#each cards}}     
                 <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+                   
+                    {{#with picture}}
+                    {{#if picture}}
+                    {{#each picture}}
+                    <img class="card-img-top" src="{{src}}" alt="{{alt}}">
+                    {{/each}}
+                    {{/if}}
+                    {{/with}}
+                    
                     <div class="card-body">
-                        <h5 class="card-title">Title</h5>
+                        {{#with title}}
+                        <h5 class="card-title">{{title}}</h5>
+                        {{/with}}
+                        {{#with description}}
                         <p class="text-bg-light">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                            {{description}}
                         </p>
-                        <a href="summary" class="btn btn-primary">Go somwhere</a>
-                    </div>                   
+                        {{/with}}
+
+                        {{#with button}}
+                        {{#if button}}
+                        {{#each button}}
+                        <a href="{{href}}" class="btn btn-primary">{{text}}</a>
+                        {{/each}}
+                        {{/if}}
+                        {{/with}}
+                    </div>
+                 {{/each}}
+                 {{/if}}                      
                 </div>
             </div>
+            
+            {{/with}}
+            {{/with}}
+            
 
             <div class="col-6">
                 <div class="card">
@@ -67,121 +115,94 @@
                 </div>
             </div>            
         </div>
+        
+       
+        
     </section>
+    
+    
     <hr>
+    {{!-- Table --}}
+    {{#with winner}}
     <div>
-        <div class="h2">H2 heading</div>
+        <div class="h2">{{title}}</div>
+        {{#with table}}
         <table class="table table-bordered">
-            <thead class="table-light">
+            {{#if head}}
+            <thead class="table-light">                                
                 <tr>
-                    <th>Card header</th>
-                    <th>Card header</th>
-                    <th>Card header</th>
-                </tr>
+                    <th>{{head.[0]}}</th>
+                    <th>{{head.[1]}}</th>
+                    <th>{{head.[2]}}</th>
+                    <th>{{head.[3]}}</th>
+                    
+                </tr>               
             </thead>
+            {{/if}}
+            
+            {{#if user}}
+            {{#each user}}
             <tbody>
                 <tr>
-                    <td>A second item</td>                   
-                    <td>A second item</td>
-                    <td>A second item</td>
+                    <td>{{place}}</td>
+                    <td>{{name}}</td>
+                    <td>{{surname}}</td>
+                    <td>{{nickname}}</td>                    
+                    
                 </tr>
-                <tr>
-                    <td>A third item</td>                   
-                    <td>A third item</td>
-                    <td>A third item</td>
-                </tr>               
-                <tr>
-                    <td>A third item</td>                   
-                    <td>A third item</td>
-                    <td>A third item</td>
-                </tr>  
-                
-            </tbody>         
+                 
+                {{/each}}
+            </tbody> 
+            {{/if}}        
         </table>
+        {{/with}}
     </div>
+    {{/with}}
 
-    <section class="col-12">
-        <div class="display-5">Display 3</div>
+    {{!-- Galery --}}
+    <section>
+        <div class="display-5">{{gallery.title}}</div>
             
             <div class="row gx-2 gy-1">
             <div class="col-6">
-            
+            {{#each gallery.cards}}
             <div class="card text-bg-secondary">
-            <div class="card-header">Header</div>
+                
+                
+            <div class="card-header">{{items.[0]}}</div>
+           
             <div class="card-body">
-                <h5 class="card-titel">Secondary</h5>
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-titel">{{name}}</h5>
+                <p>{{items.[1]}}, {{items.[2]}}</p>
             </div>
+            {{/each}}
             </div>
-            </div>
-
-            <div class="col-6">
-            
-            <div class="card text-bg-secondary">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-titel">Secondary</h5>
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-            </div>
-
-            <div class="col-6">
-            
-            <div class="card text-bg-secondary">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-titel">Secondary</h5>
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-            </div>
-
-            <div class="col-6">
-            
-            <div class="card text-bg-secondary">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-titel">Secondary</h5>
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-            </div>
-            
-
-            
-            
+            </div>     
         </section>
         <br>
         <hr>
+       
         <section class="col-12">
         
             
             <div class="row gx-2 gy-1">
             <div class="col-6">
-            
+            {{#each relaxion.cards}}
             <div class="card">
-            <div class="card-header text-center">Header</div>
+            <div class="card-header text-center">{{header}}</div>
             <div class="card-body text-center">
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button class="btn btn-primary">Ок</button>
+                <h5 class="card-titel">{{title}}</h5>
+                <p>{{description}}</p>
+                <button class="btn btn-primary">Go somewhere</button>
             </div>
             <div class="card-footer text-center">Footer</div>
+            {{/each}}
             </div>
-            </div>
-
-            <div class="col-6">
             
-            <div class="card">
-            <div class="card-header text-center">Header</div>
-            <div class="card-body text-center">
-                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button class="btn btn-primary">Ок</button>
-            </div>
-            <div class="card-footer text-center">Footer</div>
             </div>
             
         </section>
+        
         <br>
         <hr>
         <div class="display-2">Display 2</div>
@@ -218,35 +239,35 @@
         <br>
         <hr>
 
-        <div class="h5">H5 Heading</div>
-        <section class="col-12"></section>
-        <div class="row g-3">
-        <div>
-            <a href="#" type="button" class="btn btn-link" >Link</a>
-            <a href="#" type="button" class="btn btn-outline-dark">Dark</a>
-            <a href="#" type="button" class="btn btn-outline-info">Info</a>
-        </div>
-        </div>
-
+        {{!-- Footer --}}
+        <div class="h5">{{footer.title}}</div>
         
-        <div class="row g-3">
+        <div class="row">
+        <div class="col">
+            {{#each footer.navigation}}
+            
         <div>
-            <a href="#" type="button" class="btn btn-link" >Link</a>
-            <a href="#" type="button" class="btn btn-outline-dark">Dark</a>
-            <a href="#" type="button" class="btn btn-outline-info">Info</a>
+            <a href="{{href}}" type="button" class="btn btn-link" >{{text}}</a>
+                        
         </div>
+        
+        {{/each}}        
+        </div>
+       
+        <div class="col">
+            {{#each footer.socialMedia}}
+        <div>
+            <a href="link" type="button" class="btn btn-outline-dark">{{name}}</a>            
+        </div>
+        {{/each}}
         </div>
 
-
-        <div class="row g-3">
-            <div>
-             <a href="#" type="button" class="btn btn-link" >Link</a>
-            <a href="#" type="button" class="btn btn-outline-dark">Dark</a>
-            <a href="#" type="button" class="btn btn-outline-info">Info</a>
+        <div class="col">
+            {{#each footer.partners}}
+            <div>             
+            <a href="{{link}}" type="button" class="btn btn-outline-info">{{name}}</a>
+        </div>
+        {{/each}}
         </div>
         </div>
-        </section>
-
-    
-
 </main>
