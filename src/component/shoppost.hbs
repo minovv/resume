@@ -1,0 +1,27 @@
+<div class="container">
+        <div class="row g-1 mt-3">
+            <div class="h2 m-3 text-center">{{newsOtherBlock.title}}</div>
+            {{#each newsOtherBlock.cards}}
+            <div class="col-4">
+                <div class="card-group h-100">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            {{title}}
+                            {{#if isTop}}
+                            <span class="badge rounded-pill text-bg-danger">Top</span>
+                            {{/if}}
+                            {{#if idNew}}
+                            <span class="badge rounded-pill text-bg-success">New</span>
+                            {{/if}}
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                {{description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
