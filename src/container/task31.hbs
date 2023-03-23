@@ -31,103 +31,39 @@
         <div class="h2">{{title}}</div>
         {{/with}}
 
-       {{!-- Cards --}}
-        {{#with city}}
-        {{#with cards}}
-        <div class="row gy-2 gx-2">
-            <div class="col-6">
-                
-                 {{#if cards}}
-                 {{#each cards}}     
-                <div class="card">
-                   
-                    {{#with picture}}
-                    {{#if picture}}
-                    {{#each picture}}
-                    <img class="card-img-top" src="{{src}}" alt="{{alt}}">
-                    {{/each}}
-                    {{/if}}
-                    {{/with}}
-                    
-                    <div class="card-body">
-                        {{#with title}}
-                        <h5 class="card-title">{{title}}</h5>
-                        {{/with}}
-                        {{#with description}}
-                        <p class="text-bg-light">
+      
+        <div class="row gy-2 gx-2">             
+                 {{#each city.cards}}
+            <section class="col-6">              
+                     
+                <div class="card-group h-100">
+                    <div class="card h-100">
+                    <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
+                                        
+                    <div class="card-body">                        
+                        <h5 class="card-title">{{title}}</h5>                        
+                       
+                        <p>
                             {{description}}
-                        </p>
-                        {{/with}}
-
-                        {{#with button}}
-                        {{#if button}}
-                        {{#each button}}
-                        <a href="{{href}}" class="btn btn-primary">{{text}}</a>
-                        {{/each}}
-                        {{/if}}
-                        {{/with}}
+                        </p>                  
+                                              
+                        <a href="{{button.href}}" class="btn btn-primary">{{button.text}}</a>  
                     </div>
-                 {{/each}}
-                 {{/if}}                      
                 </div>
-            </div>
-            
-            {{/with}}
-            {{/with}}
-            
-
-            <div class="col-6">
-                <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="text-bg-light">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <a href="summary" class="btn btn-primary">Go somwhere</a>
-                    </div>                   
+                                      
                 </div>
-            </div>
-
-            <div class="col-6">
-                <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="text-bg-light">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <a href="summary" class="btn btn-primary">Go somwhere</a>
-                    </div>                   
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="card">
-                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="text-bg-light">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <a href="summary" class="btn btn-primary">Go somwhere</a>
-                    </div>                   
-                </div>
-            </div>            
-        </div>
-        
-       
-        
+            </section>
+            {{/each}}               
     </section>
     
     
-    <hr>
+    <hr class="mt-5 mb-5">
     {{!-- Table --}}
     {{#with winner}}
     <div>
-        <div class="h2">{{title}}</div>
+        <div class="h2 mb-3">{{title}}</div>
         {{#with table}}
-        <table class="table table-bordered">
+        <table class="table table-bordered ms-3">
             {{#if head}}
             <thead class="table-light">                                
                 <tr>
@@ -147,8 +83,7 @@
                     <td>{{place}}</td>
                     <td>{{name}}</td>
                     <td>{{surname}}</td>
-                    <td>{{nickname}}</td>                    
-                    
+                    <td>{{nickname}}</td>               
                 </tr>
                  
                 {{/each}}
@@ -161,11 +96,12 @@
 
     {{!-- Galery --}}
     <section>
-        <div class="display-5">{{gallery.title}}</div>
+        <div class="display-5 mb-3">{{gallery.title}}</div>
             
             <div class="row gx-2 gy-1">
-            <div class="col-6">
             {{#each gallery.cards}}
+            <section class="col-6">
+            
             <div class="card text-bg-secondary">
                 
                 
@@ -175,20 +111,23 @@
                 <h5 class="card-titel">{{name}}</h5>
                 <p>{{items.[1]}}, {{items.[2]}}</p>
             </div>
-            {{/each}}
+            
             </div>
-            </div>     
+            
+            </section>
+            {{/each}}     
         </section>
-        <br>
-        <hr>
+        <hr class="mt-5 mb-5">
        {{!-- Relaxion --}}
         <section class="col-12">
         
             
             <div class="row gx-2 gy-1">
-            <div class="col-6">
             {{#each relaxion.cards}}
-            <div class="card">
+            <section class="col-6">
+            
+            <div class="card-group h-100">
+                <div class="card h-100">
             <div class="card-header text-center">{{header}}</div>
             <div class="card-body text-center">
                 <h5 class="card-titel">{{title}}</h5>
@@ -200,9 +139,10 @@
             {{#if footer}}
             <div class="card-footer text-center">Footer</div>
             {{/if}}
-            {{/each}}
             </div>
-            
+            </div>
+            </section>
+            {{/each}}
             </div>
             
         </section>
@@ -211,8 +151,9 @@
         
             
             <div class="row gx-2 gy-1">
-            <div class="col-6">
-            {{#each rest.cards}}
+             {{#each rest.cards}}
+            <section class="col-6">
+           
             <div class="card">
             <div class="card-header text-center">{{header}}</div>
             <div class="card-body text-center">
@@ -225,14 +166,14 @@
             {{#if footer}}
             <div class="card-footer text-center">{{footer}}</div>
             {{/if}}
-            {{/each}}
+           
             </div>
-            
+            </section>
+             {{/each}}
             </div>
             
         </section>
-        <br>
-        <hr>
+        <hr class="mt-5 mb-5">
         {{!-- Proposition --}}
         <div class="display-2">{{proposition.title}}</div>
 
@@ -240,9 +181,9 @@
         
             
             <div class="row gx-3 gy-3">
-            
-            <div class="col-6">
             {{#each proposition.card}}
+            <section class="col-6">
+            
             <div class="card text-bg-warning text-light">
             <div class="card-header">{{header}}</div>
             <div class="card-body">
@@ -250,14 +191,13 @@
                 <p>{{description}}</p>
                 
             </div>
-            {{/each}}
-            </div>
-            </div>           
             
+            </div>
+            </section>           
+            {{/each}}
             </div>            
         </section>
-        <br>
-        <hr>
+        <hr class="mt-5 mb-5">
 
         {{!-- Footer --}}
         <div class="h5">{{footer.title}}</div>
