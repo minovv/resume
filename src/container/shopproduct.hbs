@@ -104,28 +104,29 @@
                        {{#each productData.actionList}}
                         
                             {{#if isWarning}}
-                            <a href="#" type="button" class="btn btn-warning text-light">{{name}}</a>
+                            <a href="#" type="button" class="btn btn-warning text-light ms-2">{{name}}</a>
                             {{/if}}                            
                         
                         
                             {{#if isError}}
-                            <a href="#" type="button" class="btn btn-outline-danger">{{name}}</a>
+                            <a href="#" type="button" class="btn btn-outline-danger m-2">{{name}}</a>
                             {{/if}}                                 
                          
                             {{#if isSuccess}}
-                            <a href="#" type="button" class="btn btn-success text-light">{{name}}</a>
+                            <a href="#" type="button" class="btn btn-success text-light m-2">{{name}}</a>
                             {{/if}}                                                   
                         
                                      
                             {{#if isGood}}
-                            <a href="#" type="button" class="btn btn-outline-success">{{name}}</a>
+                            <a href="#" type="button" class="btn btn-outline-success m-2">{{name}}</a>
                             {{/if}}                            
                         {{/each}}                  
                     </div>
             </div>
-            <hr>
+            <hr class="mt-5">
             <div class="container">
                 <div class="row g-1">
+                    <div class="h3 text-center m-3">{{goodsOtherBlock.title}}</div>
                     {{#each goodsOtherBlock.cards}}
                     <div class="col-6">
                         <div class="card">
@@ -146,6 +147,30 @@
                     {{/each}}
                 </div>
             </div>
+            <hr class="mt-5">
+            {{#with service}}
+    <div class="container mt-5">
+        <div class="alert text-bg-success">
+            <div class="row g-1">
+                <div class="h2 text-light text-center">{{title}}</div>
+            </div>
+            <div class="row g-1">
+                <p class="text-light text-center">{{description}}</p>
+            </div>
+            {{#each buttons}}
+            <div class="row g-1">
+                <div class="text-center">
+                    <a href="{{link}}" rel="{{rel}}" type="button" class="btn btn-primary text-center">{{text}}</a>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}   
+    <hr class="mt-5">
+    <div class="row">
+        {{> shopfooter}}
+    </div>
 
     
    
