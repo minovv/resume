@@ -1,0 +1,19 @@
+{{#with service}}
+    <div class="container mt-5">
+        <div class="alert text-bg-success">
+            <div class="row g-1">
+                <div class="h2 text-light text-center">{{title}}</div>
+            </div>
+            <div class="row g-1">
+                <p class="text-light text-center">{{description}}</p>
+            </div>
+            {{#each buttons}}
+            <div class="row g-1">
+                <div class="text-center">
+                    <a href="{{link}}" rel="{{rel}}" type="button" class="btn btn-primary text-center">{{text}}</a>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}

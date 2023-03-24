@@ -1,10 +1,5 @@
 <main>
     <div>
-        {{> shopheader}}
-    </div>
-    
-    {{!-- Breadcrumb --}}
-    <div>
         {{> breadcrumbs}}
     </div>
 
@@ -124,55 +119,17 @@
                     </div>
             </div>
             <hr class="mt-5">
-            <div class="container">
-                <div class="row g-1">
-                    <div class="h3 text-center m-3">{{goodsOtherBlock.title}}</div>
-                    {{#each goodsOtherBlock.cards}}
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="{{image}}" alt="{{title}}">
-                            <div class="card-body">
-                                <span class="h5">{{title}}</span>
-                                {{#if isHot}}
-                                <span><span class="badge rounded-pill text-bg-warning">Hot</span>{{/if}}
-                                {{#if idNew}}
-                                <span><span class="badge rounded-pill text-bg-primary">New</span>{{/if}}
-
-                                <div>
-                                    <p>{{description}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div>
+            <div>
+                {{> shopcard}}
             </div>
-            <hr class="mt-5">
-            {{#with service}}
-    <div class="container mt-5">
-        <div class="alert text-bg-success">
-            <div class="row g-1">
-                <div class="h2 text-light text-center">{{title}}</div>
-            </div>
-            <div class="row g-1">
-                <p class="text-light text-center">{{description}}</p>
-            </div>
-            {{#each buttons}}
-            <div class="row g-1">
-                <div class="text-center">
-                    <a href="{{link}}" rel="{{rel}}" type="button" class="btn btn-primary text-center">{{text}}</a>
-                </div>
-            {{/each}}
-            </div>
-        </div>
-    </div>
-    {{/with}}   
-    <hr class="mt-5">
-    <div class="row">
-        {{> shopfooter}}
-    </div>
-
-    
-   
-
+           
+            
+<hr class="mt-5">
+<div>
+    {{> shopaction}}
+</div>
+<hr class="mt-5">
+<div class="row">
+    {{> shopfooter}}
+</div> 
 </main>
