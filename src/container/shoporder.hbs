@@ -3,36 +3,29 @@
 </div>
 
 <main>
-    {{!-- Contacts Data --}}
-    <div class="container">
-        <div class="row-12 g-2">
-            <div class="h1 pt-2 pb-5">{{header}}</div>
-            
+    {{!-- Shoporder --}}
+    <div class="h1 pt-2 pb-5">{{header}}</div>
+        <div class="row g-2">
             <div class="col-8">
                 <div class="h2 mb-3">{{contacts_data.title}}</div>
-                
                 {{!-- Buttons --}}
-                <div class="row pe-6 mb-4">
-                    <div class="col">
+                
+                    <div class="row">
                     {{#each contacts_data.buttons}}
                     {{#if isPrimary}}
-                    <div class="mb-2"><a type="button" class="btn btn-warning text-light">{{text}}</a></div>
+                    <div class="col mb-2"><a type="button" class="btn btn-warning text-light">{{text}}</a></div>
                     {{else}}
-                </div>
-                <div class="col">
-                    <div><a type="button" class="btn btn-outline-warning">{{text}}</a></div>
+                    <div class="col mb-2"><a type="button" class="btn btn-outline-warning">{{text}}</a></div>
                     {{/if}}
                     {{/each}}
-                </div>
-                </div>
-                {{!-- Form --}}
-                <div class="col-12">
-                    <div class="row">
-                        
-                        {{#with contacts_data}}
-                        {{#with form}}
-                        {{#with input}}                    
+                    </div>
+                    
+                    {{!-- Contacts Data --}}
+                    {{#with contacts_data}}
+                    {{#with form}}
+                    {{#with input}}                    
                        
+                    <div class="row">
                         <div class="col-6">                             
                             <div class="mb-3">                            
                                 <label class="form-label">{{surname.label}}</label>
@@ -65,75 +58,81 @@
                                     <div class="form-text">{{email.caption}}</div>
                             </div>
                         </div>
-                        <hr class="ms-2 mt-3 mb-3">
-
+                    </div>
+                    <hr class="ms-2 mt-3 mb-3">
+                    <div class="row">
                         {{!-- Switch --}}
                         {{#with ../switch}}
-                        <div class="col-8">
+                        <div class="col">
                             <div>Test</div>
                         </div>
                         {{/with}}
 
-                        </div>
-                        {{/with}}      
-                        {{/with}}
-                        {{/with}}
+                    </div>
+                    {{/with}}
+                    {{/with}}
+                    {{/with}}
+                       
+                    <hr class="ms-2 mt-3 mb-3">
 
-                        <hr class="mt-3 mb-3">
-
-                        {{!-- Delivery --}}
-                        {{#with delivery}}                       
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="h3">{{title}}</div>
-                                    {{#each select}} 
-                                    <div class="col-6">                                    
-                                        <div class="card">
+                    {{!-- Delivery --}}
+                    <div class="row">
+                        {{#with delivery}}
+                            <div class="h3">{{title}}</div>                       
+                                    {{#each select}}                                                                      
+                                        <div class="col">
+                                            <div class="card">
                                         <div class="card-body">
                                             <label class="form-label">{{label}}</label>
                                             <select class="form-select">{{text}}</select>
-                                        </div>                                    
-                                    </div>                                
-                                </div>
-                                {{/each}}
-                            </div>
-                        </div>                        
+                                        </div>  
+                                        </div>                                  
+                                    </div>                             
+                                    {{/each}}                  
                         {{/with}}
-                        
-                        <hr class="mt-3 mb-3">
-                       
-                        {{!-- Delivery type --}}
+                    </div>
+                    <hr class="ms-2 mt-3 mb-3">
+
+                    {{!-- Delivery Type --}}
+                    <div class="row">
                         {{#each delivery.delivery_type}}
-                        <div class="col">
+                        <div class="row">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input">
-                                <div><label class="form-check-label">{{type}}</label></div>
-                                <div class="text-end">{{value}}</div>                                
+                                <div class="row"><label class="form-check-label">{{type}}</label></div>
+                                <div class="row"><label class="text-end">{{value}}</label></div>                                
                             </div>
                         </div>
                         {{/each}}
+                    </div>
+                    <hr class="ms-2 mt-3 mb-3">
 
-                        <hr class="mt-3 mb-3">
-                       
-                        {{!-- Payment type --}}
-                        {{#each delivery.payment}}
+                    {{!-- Payment --}}
+                    {{#with delivery}}
+                    {{#with payment}}
+                    <div class="row">
                         <div class="col">
+                            <div class="h3">Payment</div>
+                            {{#each type}}
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input">
-                                <div><label class="form-check-label">{{type}}</label></div>
-                                <div>{{description}}</div>                                
+                                <div class="row"><label class="form-check-label">{{type}}</label></div>
+                                
+                                <div class="row"><label class="text-end">{{description}}</label></div>
+                                
                             </div>
+                            {{/each}}
                         </div>
-                        {{/each}}
+                    </div>
+                    {{/with}}
+                    {{/with}}
 
-                        <hr class="mt-3 mb-3">
-                       
-                        {{!-- Contact --}}
-                        {{#with delivery}}
+                    <hr class="ms-2 mt-3 mb-3">
+
+                    {{!-- Contact --}}
+                     {{#with delivery}}
                         {{#with contact}}
-                        <div class="col-12">
-                    <div class="row">                                      
-                       <div class="h4">{{title}}</div>
+                       <div class="row">
                         <div class="col-6">                             
                             <div class="mb-3">                            
                                 <label class="form-label">{{surname.label}}</label>
@@ -166,36 +165,109 @@
                                     <div class="form-text">{{email.caption}}</div>
                             </div>
                         </div>
-                        {{/with}}
-                        
-                        <hr class="ms-2 mt-3 mb-3">
-
-                        {{!-- Comment --}}                        
-                        {{#with coment}}
-                        <div class="col">
-                            <label class="form-label">{{label}}</label>
+                    </div>
+                    <hr class="ms-2 mt-3 mb-3">
+                    
+                      {{#with ../coment}}
+                      <div  class="row">
+                        {{!-- <div class="col-6"> --}}
+                            <div class="h5"><label class="form-label">{{label}}</label></div>
+                            <textarea class="form-control" rows="1" placeholder="{{placeholder}}"></textarea>
+                        {{!-- </div> --}}
+                      </div>
+                      {{/with}}                      
+                      {{/with}}
+                    {{/with}} 
+                    <hr class="ms-2 mt-3 mb-3">
+                    
+                    {{!-- Coupon --}}
+                    
+                    {{#with coupon}}
+                    <div class="row">
+                        <div class="h5">{{title}}</div>
+                        {{#with select}}
+                        <div class="mb-3">
+                            <label class="form-label">{{availabel_coupon.label}}</label>
+                            <select class="form-select">
+                                <option selected>{{availabel_coupon.placeholder}}</option>
+                                {{#each availabel_coupon.options}}
+                                <option>{{text}}</option>
+                                {{/each}}
+                            </select>                                
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{friend_coupon.label}}</label>
+                            <select class="form-select">
+                                <option selected>{{friend_coupon.placeholder}}</option>
+                                {{#each friend_coupon.options}}
+                                <option>{{text}}</option>
+                                {{/each}}
+                            </select>                                
                         </div>
                         {{/with}}
-                        
 
+                        {{#with add}}
+                        <div class="mb-3">
+                            <div class="row">
+                                {{#with friend}}
+                                <label class="form-label">{{label}}</label>
+                                <textarea class="form-control" rows="1" placeholder="{{placeholder}}"></textarea>
+                                <div class="form-text">{{caption}}</div>
+                                {{/with}}
+                            </div>
+                            <div class="row">
+                                {{#with colleague}}
+                                <label class="form-label">{{label}}</label>
+                                <textarea class="form-control" rows="1" placeholder="{{placeholder}}"></textarea>
+                                <div class="form-text">{{caption}}</div>
+                                {{/with}}
+                            </div>
+                        </div>
                         {{/with}}
-                        <hr class="ms-2 mt-3 mb-3">
-                        
-                                             
-                       
-                        
                     </div>
-                </div>
-            </div>         
-        </div>
-    </div>    
+                    {{/with}}
+                    <hr classs="ms-2 mt-3 mb-3">
 
-</main>
+                   {{#with quiz}}
+                   <div class="row">
+                    <div class="h6">{{title}}</div>
+                    <div class="mb-3">
+                        {{#with preference}}
+                        <div>
+                            <p>{{title}}</p>
+                        </div>
+                        {{#each options}}
+                        <div class="form-check">                            
+                            <label class="form-check-label">{{this}}</label>
+                            <input type="checkbox" class="form-check-input">                         
+                        </div>
+                        {{/each}}
+                        {{/with}}
+                    </div>
+                   </div>
 
-<aside class="row">
-        {{!-- Action block --}}
-            <div class="col-4">
-                <div class="card mb-3">
+                   {{#with your_expirience}}
+                   <div class="row">
+                    <div class="h6">{{label}}</div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="1" ></textarea>
+                    </div>
+                   </div>
+                   {{/with}}
+
+
+                   {{/with}}
+
+                   
+                   
+                   
+
+                    
+            
+            </div>{{!-- End of Column 8 --}}
+
+            {{!-- A.K.A. Aside --}}
+            <div class="col-4"><div class="card mb-3">
                     <div class="card-body">
                         {{#each action_block}}
                         {{#if isPrimary}}
@@ -209,9 +281,6 @@
                         {{/if}}
                         {{/each}}
                     </div>
-                </div>
-                {{!-- Total block --}}
-                <div class="col">
                     <div class="card">
                         <div class="h5 ps-3 pt-2">{{total.title}}</div>
                         <div class="card-body">
@@ -245,10 +314,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-    </aside>
-
-<hr class="mt-5">
+            </div>   
 <div class="row">
     {{> shopfooter}}
-</div> 
+</div>
+</main>
