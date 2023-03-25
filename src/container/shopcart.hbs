@@ -1,0 +1,37 @@
+<main>
+    <div>
+        {{>breadcrumb}}
+    </div>   
+    
+    <div class="row g-5">
+        <div class="col-12">
+            {{!-- Cart Block --}}
+            <div class="row">
+                <div class="col-6 h1">{{header.title}}</div>
+                <div class="col-6 text-end pe-5">
+                    {{#with header.button}}
+                        <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                    {{/with}}                   
+                </div>
+            </div>
+            <hr class="mb-3">
+
+            {{!-- goodsBlock --}}
+            
+            
+            {{!-- total Block --}}
+
+            {{!-- subscribeBlock --}}
+
+            {{!-- goodsOtherBlock --}}
+            <div class="mb-3">
+                {{>shopcard}}
+            </div>
+        </div>
+    </div>
+      
+    
+    <div>
+        {{>shopfooter}}
+    </div>
+</main>
