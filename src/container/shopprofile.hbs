@@ -50,44 +50,9 @@
     <hr>
     <div class="row g-5 mt-3 mb-3">
         
-        {{!-- {{#with purchase.itemList}} --}}
-        {{#each purchase.itemList}}
-        <div class="col-3">
-            
-            <div class="row">{{number}}</div>
-            <div class="row">{{status}}</div>
-            {{!-- {{/each}} --}}
-        </div>
-        <div class="col-3">
-            {{!-- {{#each purchase.itemList}} --}}
-            <div class="row">{{amount.title}}</div>
-            <div class="row h5">{{amount.value}}</div>
-            {{!-- {{/each}} --}}
-        </div>
-        <div class="col-4">
-            {{!-- {{#each purchase.itemList}} --}}
-            
-            <div class="row g-2">                
-                {{#each images}}
-                <div class="col">
-                    <img src="{{this}}" alt="Item photo">
-                </div>
-                {{/each}}                
-            </div>
-            
-            {{!-- {{/each}} --}}
-        </div>
-        <div class="col-2">
-            {{!-- {{#each purchase.itemList}} --}}
-            <div class="col">
-                <a href="{{button.link}}" type="button" class="btn btn-primary">{{button.text}}</a>
-            </div>
-            
-        </div>
-        {{/each}}
-            
-        {{!-- {{/with}} --}}
-    </div>
+        {{!-- purchaseItem --}}
+        {{>purchaseItem}}
+        
     <hr>       
     {{!-- end of purchase --}}
     
