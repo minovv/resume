@@ -146,7 +146,7 @@
                 </div>
                 <div class="row">
                     {{#each ../buttons}}
-                    <div class="col-4">
+                    <div class="col-4 mt-4">
                         {{#if isPrimary}}
                         <a href="{{link}}" class="btn btn-primary">{{text}}</a>
                         {{/if}}
@@ -169,12 +169,12 @@
             
             <div class="card-body">
                 <div class="h5">{{recipients.title}}</div>
-                <div class="row ps-3">
+                <div class="row">
                     {{#each recipients.users}}
                     <div class="col-4">
                         <div class="row ps-3">{{name}}</div>
                         <div class="row ps-3">{{phone}}</div>
-                        <div class="col mt-2">
+                        <div class="col mt-4">
                         <a type="botton" class="btn btn-primary" href="{{button.link}}">{{button.text}}</a>
                     </div>
                     </div>
@@ -188,7 +188,51 @@
         {{#with contacts}}
         <div class="card col-12">
             <div class="h5">{{title}}</div>
+            <div class="card-body">
+                <div class="row ps-3">
+                    <div class="col-4">
+                        {{#with contactData}}
+                        {{#with phone}}                        
+                        <div class="row">{{title}}</div>
+                        <div class="row h5">{{value}}</div>
+                        {{/with}}
+                        
+                        
+                    </div>
+                    <div class="col-4">
+                        {{#with additionalPhone}}
+                        <div class="row">{{title}}</div>
+                        <div class="row h5">{{value}}</div>
+                        {{/with}}
+                        
+                        
+                    </div>
+                    <div class="col-4">
+                        {{#with email}}
+                       
+                        <div class="row">{{title}}</div>
+                        <div class="row h5">{{value}}</div>
+                        {{/with}}
+                       
+                    </div>  
+                </div>
+                <div class="row">
+                    {{#each ../buttons}}
+                    <div class="col-4 mt-4">
+                        {{#if isPrimary}}
+                        <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                        {{/if}}
+                        {{#if isSecondary}}
+                        <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                        {{/if}}
+                        {{#if isDanger}}
+                        <a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
         </div>
+        {{/with}}
         {{/with}}
         {{!-- end of with contacts --}}
         
@@ -198,5 +242,6 @@
     {{/with}}
 
     {{!-- userInfo --}}
+    {{>shopfooter}}
 
 </main>
