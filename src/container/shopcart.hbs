@@ -1,0 +1,84 @@
+<main>
+    <div>
+        {{>breadcrumb}}
+    </div>   
+    
+    <div class="row g-5">
+        <div class="col-12">
+            {{!-- Cart Block --}}
+            <div class="row">
+                <div class="col-6 h1">{{header.title}}</div>
+                <div class="col-6 text-end pe-5">
+                    {{#with header.button}}
+                        <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                    {{/with}}                   
+                </div>
+            </div>
+            <hr class="mb-3">
+
+            {{!-- goodsBlock --}}
+            {{>cartGoodsItem}}           
+            {{!-- end of goodsBlock --}}
+            <hr class="mb-3">
+            
+            
+            {{!-- total Block --}}
+            {{#with total}}
+            <div class="row g-5 pt-5 pb-5">
+                <div class="col-8">
+                    <div class="display-5">{{title}}</div>
+                    <div class="display-3">{{amount}}</div>
+                    <div class="">{{delivery}}</div>                    
+                </div>
+                <div class="col-4">
+                    {{#each buttons}}
+                     {{#if isSuccess}}
+                                <div class="col mb-5">
+                                    <button class="btn btn-success">{{text}}</button>
+                                </div>
+                            {{else}}
+                                <div class="col mt-3">
+                                    <button class="btn btn-outline-success">{{text}}</button>
+                                </div>
+                            {{/if}}
+                    {{/each}}              
+                </div>                             
+            </div>     
+            {{/with}}
+            <hr class="mb-3">
+
+            {{!-- subscribeBlock --}}
+            <div class="row g-5 pt-3 pb-3">
+            {{#with subscribe}}
+                <section class="alert text-bg-dark">
+                    <div class="row p-2 g-1">
+                            <div class="h2 col-sm-6 text-light">{{header}}</div>
+                                <div class="col-sm-6 text-end">
+                                    <div>
+            {{#each buttons}}
+                    <a href="{{link}}" type="button" class="btn btn-primary mt-3">{{text}}</a>
+            {{/each}}
+                                    </div>
+                                </div>
+            
+                                <div class="text-light">
+                                    <p>{{description}}</p>
+                                </div>            
+                    </div>
+                </section>
+        {{/with}}
+            </div>
+            
+
+            {{!-- goodsOtherBlock --}}
+            <div class="mb-3">
+                {{>shopcard}}
+            </div>
+        </div>
+    </div>
+      
+    
+    <div>
+        {{>shopfooter}}
+    </div>
+</main>
