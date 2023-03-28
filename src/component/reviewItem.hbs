@@ -1,0 +1,54 @@
+      {{!-- reviewList --}}
+            <div class="card mt-3 mb-3">
+                {{#each reviewList}}
+                <div class="card mt-3 mb-3">
+                    <div class="card-header">
+                        <div class="h5">{{title.userName}}</div>
+                        <div>{{title.caption}}</div>
+                        <div class="text-end">{{title.date}}</div>
+                    </div>
+                    <div class="card-body">
+                        <div>{{reviewBody.seller.title}}: {{reviewBody.seller.value}}</div>
+                        <div>{{reviewBody.rating.title}}: {{reviewBody.rating.value}}</div>
+                        <div>
+                            <p>{{reviewBody.text}}</p>
+                        </div>
+                        <div>
+                            <div class="h5">{{reviewBody.advantages.title}}</div>
+                            <div>
+                                <p>{{reviewBody.advantages.text}}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="h5">{{reviewBody.disadvantages.title}}</div>
+                            <div>
+                                <p>{{reviewBody.disadvantages.text}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{#each reviewBody.images}}
+                            <div class="col-3">
+                                <img src="{{this}}" alt="image">
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                {{#each reviewBody.coments}}
+                <div class="card ms-5 mb-2">                    
+                    <div class="card-body">                        
+                        <div class="h5">{{userName}}</div>
+                        <div class="text-end">{{date}}</div>
+                        <div>
+                            <p>{{text}}</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                {{/each}}
+
+
+                {{!-- end of reviewList --}}
+                {{/each}}
+            </div>

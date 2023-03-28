@@ -1,0 +1,140 @@
+    <main>
+        <div class="row g-5">
+            {{!-- formBlock --}}
+            <div class="col-8">
+                {{#with formBlock}}
+                <div class="h1">{{header}}</div>
+                <div class="h5">{{rating.title}}: {{rating.value}}</div>
+            
+            
+
+            {{!-- actionBlock --}}
+            
+               <div class="row">
+                
+                <ul class="nav nav-tabs">
+                    
+                    {{#each actionBlock.tabs}}
+                    <li class="nav-item">
+                        <a class="nav-link {{#if isActive}} active {{/if}}" href="#">{{text}}</a>
+                    </li>
+                    {{/each}}                    
+                </ul>
+                
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-6">
+                            <div class="form-input">
+                                {{#with actionBlock.field}}
+                                {{!-- <label for="name">Name</label> --}}
+                                <input type="text" class="form-control" placeholder="{{placeholder}}">
+                            </div>
+                            
+                        </div>
+                        <div class="col text-end">
+                            <a href="{{button.link}}" type="button" class="btn btn-secondary">{{button.text}}</a>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+                
+                </div>
+                
+            
+            {{!-- end of formBlock --}}
+
+            {{!-- feedbackBlock --}}
+            <div class="section mt-5">
+                            
+               <div class="row">
+                 <div class="h2">{{feedbackBlock.title}}</div>
+               </div>
+               
+               
+                <div class="col mt-4">
+                    {{#each feedbackBlock.buttons}}
+                    {{#if isPrimary}}
+                    <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+                    {{/if}}
+                    {{#if isWarning}}
+                    <a href="{{link}}" type="button" class="btn btn-warning text-light">{{text}}</a>
+                    {{/if}}
+                    {{#if isSuccess}}
+                    <a href="{{link}}" type="button" class="btn btn-success">{{text}}</a>
+                    {{/if}}
+                    {{#if isDanger}}
+                    <a href="{{link}}" type="button" class="btn btn-danger">{{text}}</a>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                
+            </div>
+            
+            
+            </div>
+
+            <div class="col-4">
+                {{#with goodsInfo}}
+                <div class="card mb-2">
+                    <img src="{{photo}}" alt="{{name}}">
+                    <div class="card-body">
+                        <div class="h5">{{name}}</div>
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="h5">{{price}}</div>
+                        <div class="h6">In stock</div>
+                        <div class="col mb-2">
+                            {{#each buttons}}
+                            {{#if isPrimary}}
+                            <a href="{{link}}" type="button" class="btn btn-primary">{{text}}</a>
+                            {{else}}                            
+                        </div>
+                        <div class="col">
+                            <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
+                        </div>
+                            {{/if}}
+                            {{/each}}
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div>{{seller.title}}:
+                            <b>{{seller.value}}</b>
+                        </div>                        
+                    </div>
+                </div>
+                {{!-- end of goodsInfo --}}
+                {{/with}}
+            </div>
+            {{!-- end of #with formBlock --}}
+                {{/with}}
+
+            {{!-- reviewList --}}
+            {{>reviewItem}}       
+                        
+        </div>
+        
+        {{#with service}}
+    <div class="container mt-5">
+        <div class="alert text-bg-success">
+            <div class="row g-1">
+                <div class="h2 text-light text-center">{{title}}</div>
+            </div>
+            <div class="row g-1">
+                <p class="text-light text-center">{{description}}</p>
+            </div>
+            {{#each buttons}}
+            <div class="row g-1">
+                <div class="text-center">
+                    <a href="{{link}}" type="button" class="btn btn-primary text-center">{{text}}</a>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}   
+   
+    {{> shopfooter}}
+    </main>
