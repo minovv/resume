@@ -1,0 +1,49 @@
+<div class="row g-3">
+             {{#each goodsList}}
+            <div class="card col-6">
+                <div class="card-body">
+                    <img src="{{img}}" class="img-fluid" alt="{{name}}">
+                    <div class="row">
+                        
+                        <div class="col p-2">
+                            {{#if isHot}}
+                            <span class="badge rounded-pill text-bg-warning">Hot</span>
+                            {{/if}}
+                            {{#if isNew}}
+                            <span class="badge rounded-pill text-bg-primary">New</span>
+                            {{/if}}
+                            {{#if isFast}}
+                            <span class="badge text-bg-success">Fast</span>
+                            {{/if}}
+                            {{#if isFree}}
+                            <span class="badge text-bg-secondary">Free</span>
+                            {{/if}}
+                            <div class="h5 mt-2 mb-2">{{name}}</div>
+                            <div class="mb-2">{{review.amount}} {{review.text}}</div>
+                            <div class="h4 mb-2">{{price}}</div>
+                            <div class="mb-2">{{delivery}}</div>
+                            <div class="col mb-2">
+                                {{#each buttons}}
+                                {{#if isPrimary}}
+                                <a href="{{link}}" type="button" class="mb-2 btn btn-primary">{{text}}</a>
+                                {{/if}}                                
+                            </div>
+                            <div class="col mb-2">
+                                {{#if isSecondary}}
+                                <a href="{{link}}" type="button" class="btn btn-secondary">{{text}}</a>
+                                {{/if}}
+                                {{/each}}
+                            </div>
+                            <div class="col mb-2">
+                                {{#each characteristics}}
+                                <ul class="mt-2">
+                                    <li>{{title}} {{value}}</li>
+                                </ul>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+           </div>
