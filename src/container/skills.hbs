@@ -3,40 +3,77 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<main>    
     {{#with main}}
-    <main>
-        <div>            
-            {{> title big=true data='My Skills'}}                 
-            <ul>
+    <div class="row">
+        <div class="col-6">
+            <div class="row g-2">
+                <div class="card p-0">
+                    <div class="card-header">
+                        {{> title big=true data='My Skills'}}  
+                    </div>
+                    <div class="card-body">
+                        <ul>
                 {{#each skills}}
-                <li>
-                    {{name}}
-                    {{#if point includeZero=true}} {{point}} {{/if}}
-                    {{#if isTop}} (top) {{/if}}
-                    {{#unless point includeZero=true}} (not Studying) {{/unless}}
+                <li class="row">
+                    <div class="col-8 ps-0">
+                        {{name}}
+                        {{#if isTop}}
+                        <span class="badge rounded-pill text-bg-danger text-uppercase">
+                             top
+                             {{/if}}
+                        </span>
+                         {{#unless point includeZero=true}}
+                         <span class="badge rounded-pill text-bg-info text-light">
+                            not Studying
+                         </span>
+                          
+                         {{/unless}}
                     {{#unless point}}
-                    {{#if point includeZero=true}} (in Progress) {{/if}}                  
-                    {{/unless}}
+                    {{#if point includeZero=true}}
+                    <span class="badge rounded-pill text-bg-warning"> 
+                    in Progress 
+                    {{/if}}                  
+                    {{/unless}}                        
+                    </div>
+                    {{#if point includeZero=true}} 
+                    <div class="col-4">{{point}} points</div> 
+                    {{/if}}
+                    
+                   
                 </li>
                 {{/each}}
             </ul>
+                    </div> 
+                </div>
+            </div>
         </div>
-        <br/>
-        <div>            
-            {{> title data='My Hobbies'}}                 
-            <ol>
+        <div class="col-6">
+            <div class="row g-2">
+                <div class="card p-0">
+                    <div class="card-header">
+                        {{> title big=true data='My Hobbies'}}  
+                    </div>
+                    <div class="card-body">
+                        <ol>
                 {{#each hobbies}}
                 <li>
                     {{name}}
-                    {{#if isMain includeZero=true}} (favourite) {{/if}}
+                    {{#if isMain includeZero=true}} 
+                    <span class="badge rounded-pill text-bg-danger">
+                        favourite
+                    </span> 
+                    {{/if}}
                 </li>
                 {{/each}}
-            </ol>
-        </div>             
-    </main>
+                </ol>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>                     
 {{/with}}
-</div>
+</main>
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

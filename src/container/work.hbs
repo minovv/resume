@@ -3,12 +3,14 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<main>
     {{#with main}}
-    <main>
-        <div>
-            {{> title data='Work Experience' big=true}}          
-           <div>
+    <div class="row g-5">
+        <div class=" card col-12 p-0">
+           <div class="card-header">
+             {{> title data='Work Experience' big=true}} 
+           </div>         
+           <div class="mt-4">
                 <ul>
                     {{#each experience}}
                     <li>
@@ -20,7 +22,7 @@
                             {{#if duration.to}} 
                             {{duration.to}}
                             {{else}}
-                            (untill now)
+                            <span class="badge rounded-pill text-bg-info text-light">untill now</span>
                             {{/if}}
                         </div>
 
@@ -38,7 +40,9 @@
                         <br>
 
                         <div>
-                            <strong>Projects: ({{projectAmount}})</strong>
+                            <strong>Projects: 
+                                <span class="badge rounded-pill text-bg-info text-light">{{projectAmount}}</span>
+                            </strong>
                         </div>
 
                         <br>
@@ -53,7 +57,10 @@
                                     </div>
                                     <br>
                                     <ul>
-                                    <div><em>Project stacks ({{stackAmount}})</em></div>
+                                    <div><em>Project stacks
+                                        <span class="badge rounded-pill text-bg-info text-light">{{stackAmount}}</span>
+                                         </em>
+                                    </div>
                                     <br>
                                     {{#each stacks}}
                                     <li><div>{{name}}</div></li>
@@ -63,7 +70,10 @@
                                    
 
                                     <ul>
-                                    <div><em>Project Awards ({{awardAmount}})</em></div>
+                                    <div><em>Project Awards
+                                        <span class="badge rounded-pill text-bg-info text-light">{{awardAmount}}</span>
+                                        </em>
+                                    </div>
                                     <br>
                                     {{#each awards}}
                                    <li><div>{{name}}</div></li>
@@ -81,9 +91,9 @@
         </div>
 
     </div>
-    </main>
+    </div>
     {{/with}}    
-</div>
+</main>
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
