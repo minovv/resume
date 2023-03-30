@@ -1,6 +1,24 @@
-<nav>
-        {{> link text='Summary' href="/summary" navBar=true}}
+<ul class="nav nav-underline">
+        <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/summary">Summary</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/skills">Skills</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/education">Education</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/work">Work</a>
+        </li>
+        
+</ul>
+
+{{!-- old nav
+{{> link text='Summary' href="/summary" navBar=true}}
         {{> link text='Skills' href="/skills" navBar=true}}
         {{> link text='Education' href="/education" navBar=true}}
-        {{> link text='Work' href="/work" navBar=true noLine=true}}
-</nav>
+        {{> link text='Work' href="/work" navBar=true noLine=true}} --}}

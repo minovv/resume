@@ -1,28 +1,5 @@
-<main>
-    {{!-- Navigation --}}
-    {{#with navigation}}
-    <div class="container">
-        <div class="row">
-    <div class="col-sm-4 h1">{{Logo}}</div>
-    
-    <div class="col-sm-8">
-        
-        <ul class="nav justify-content-end">
-            
-            {{#each links}}
-            <li class="nav-item">       
-                <a class="nav-link active" href="{{href}}">{{text}}</a>
-            </li>            
-            {{/each}}
-            <li class="nav-item">       
-                <a class="nav-link disabled" href="{{href}}">Disabled</a>
-            </li>            
-        </ul> 
-    </div>
-    </div>
-    {{/with}}
-
-    {{!-- News Block --}}
+<main>   
+        {{!-- News Block --}}
     {{#with newsBlock}}
     <div class="row text-center mt-5 mb-3">
             <div class="h1">{{title}}</div>

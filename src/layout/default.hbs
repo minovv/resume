@@ -25,25 +25,25 @@
   <body>
     {{#with header}}
     <header>
-        <div>
+        <div class="mb-3">
             <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
-        <div>
+        <div class="mb-2">
             <b>{{position}}</b>
         </div>
-        <br/>
-        <div>
+        
+        <div class="mb-2">
             <em>
               {{salary}}
             </em>                       
         </div>
-        <br>
+        
         <div>
             <address>
                     <div>{{address}}</div>
             </address>
         </div>
-            <br/>
+            
         <hr>
     </header>
     {{/with}}
