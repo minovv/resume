@@ -1,19 +1,36 @@
+<head>
+    <title>
+      {{page.title}}
+    </title>
+    <meta charset='utf-8' />
+    <link href='css/index.css' rel='stylesheet' />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  {{!  ↓  підключаємо іконки bootstrap   --}}
+		{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> --}}
+  
+  {{!-- icons Font Awesome --}}
+  <script src="https://kit.fontawesome.com/2817d8e005.js" crossorigin="anonymous"></script>
+
+  </head>
 {{!-- 
 Це код container файлу для summary сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<main>
     {{#with person}}
-    <main>
+    <div>
         <div>
         {{> title data='Person' big=true}}
         <br>
         <div><h2>{{name}}</h2></div>
         <div>Age: {{age}}</div>
         <div>Sex: {{gender}}</div>
-        <br>
-        <div> 
+       
+        <div class="mt-2"> 
             <b>Address:</b>
             {{#with address}}
             <address>
@@ -22,9 +39,120 @@
             </address>
             {{/with}}
         </div>
-        <hr>       
-        </div>               
-</div>
+        <hr> 
+        <div class="row">
+            <div class="col-12">
+                <section class="mb-6">
+                    <span class="badge text-bg-info">Education</span>
+                {{#each education}}
+                <div class="h5 mt-2">{{major}}: {{degree}}</div>
+                <div>{{university}} - {{graduationYear}}</div>
+                {{/each}}
+                </section>
+            </div>
+            <div class="col-12">
+                <section class="mb-6">
+                    {{#each workExperience}}
+                <span class="badge text-bg-info">Work Experience</span>
+                <div class="h5 mt-2">Company: {{company}}</div>
+                <div class="h6">{{title}}</div>
+                <div>from: {{startDate}} to {{endDate}}</div>
+                    <div>{{#each responsibilities}}
+                         <li>{{this}}</li>
+                             {{/each}}
+                    </div>
+                    <div>
+                        <p>
+                            Year Founded: {{year_founded}}
+                            Technology: {{industry}}
+                        </p>
+                    </div>
+                    <div>
+                        {{#each employees}}
+                            <p>
+                                <b>Employee:</b> {{name}}
+                            </p>
+                            <p>
+                                <b>Position:</b> {{position}}
+                            </p>
+                            <p>
+                                <b>Department:</b> {{department}}
+                            </p>
+                            <p>
+                                <b>Projects</b>
+                                {{#each projects}}
+                                    <li>{{name}}: {{description}} <span class="badge rounded-pill text-bg-warning">{{status}}</span></li>
+                                {{!-- {{/each}} --}}
+                            </p>
+                            <p>
+                                <b>Teams</b>
+                                {{#each teams}}
+                                    <p>{{team_name}}</p>
+                                
+                                    <p>
+                                        <b>{{team_leader.title}}</b>
+                                        <p>
+                                            <li>{{team_leader.name}}: {{team_leader.title}}</li>
+                                            <address>
+                                                <a href="mailto:{{team_leader.email}}">{{team_leader.email}}</a>
+                                            </address>
+                                        </p>
+                                    </p>
+                                    <p>
+                                        <b>Team Members</b>
+                                        {{#each team_members}}
+                                            
+                                            <p>
+                                                <li>{{name}}: {{title}}</li>
+                                                <address>
+                                                    <a href="mailto:{{email}}">{{email}}</a>
+                                                </address>
+                                            </p>
+                                            <p>
+                                                <b>Skills</b>
+                                                {{#each skills}}
+                                                    <li>{{this}}</li>
+                                                {{/each}}
+                                            </p>
+                                            <p>
+                                                <b>Projects</b>
+                                                {{#each projects}}
+                                                    <li>{{name}}: {{description}}</li>  
+                                            </p>
+                                            <p>
+                                                <b>Technologies</b>
+                                                {{#each technologies}}
+                                                     <li>{{this}}</li>
+                                                        {{/each}}
+                                            </p>
+                                            <p>
+                                                <b>Team members</b>
+                                                {{#each team_members}}
+                                                    <li>{{name}}: {{title}}</li>
+                                                {{/each}}
+                                            </p>
+                                            {{!-- end of Projects 2 --}}
+                                            {{/each}}
+                                        
+                                        {{!-- end of Skills --}}
+                                        {{/each}}
+                                    </p>
+                                    {{!-- end of Teams --}}
+                                {{/each}}
+                            </p>
+                            {{!-- end of Projects --}}
+                            {{/each}}
+                            {{!-- end of Employees --}}
+                        {{/each}}
+                    </div>
+                    {{!-- end of Work Experience --}}
+                {{/each}}
+                </section>
+            </div>
+        </div>      
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>               
+</main>
 {{/with}} 
 
 {{!-- 
