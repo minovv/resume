@@ -1,10 +1,14 @@
+/* :root {
+  /* background: purple; */
+/* } */
+
 html {
   max-width: 1200px;
 }
 
 body {
   margin: 32px;
-  background: #fff;
+  /* background: white; */
 }
 
 main,
@@ -16,4 +20,242 @@ nav {
 
 section {
   padding: 16px;
+}
+
+/* h1 { */
+/* color */
+/* color: red;
+  /* background: #f7f3f3; */
+/* font */
+/* font-family: 'Open Sans', sans-serif; */
+/* font-size: 2em;
+  font-weight: 300; */
+/* text */
+/* text-align: center; */
+/* text-transform: uppercase; */
+/* box */
+/* padding: 1em; */
+/* margin: 0; remove default margin */
+/* border */
+/* border-bottom: 1px solid #000; */
+/* } */
+
+/* .box { */
+/* color */
+/* color: red; */
+/* background */
+/* background: #f7f3f3; */
+/* font */
+/* font-family: 'Open Sans', sans-serif; */
+/* font-size: 2em;
+  font-weight: 300; */
+/* text */
+/* text-align: center; */
+/* text-transform: uppercase; */
+/* box */
+/* padding: 1em; */
+/* margin: 0; remove default margin */
+/* border */
+/* border-bottom: 1px solid #000; */
+/* } */
+
+/* #user,
+.user { */
+/* color */
+/* color: red; */
+/* background */
+/* background: #f7f3f3; */
+/* font */
+/* font-family: 'Open Sans', sans-serif; */
+/* font-size: 2em;
+  font-weight: 300; */
+/* text */
+/* text-align: center; */
+/* text-transform: uppercase; */
+/* box */
+/* padding: 1em; */
+/* margin: 0; remove default margin */
+/* border */
+/* border-bottom: 1px solid #000; */
+/* } */
+
+/* h3,
+h2#user,
+button {
+  color: green;
+}
+
+.box > p {
+  color: blue;
+}
+
+footer > .user {
+  color: purple;
+}
+
+footer em {
+  color: black;
+}
+
+h1 ~ * > h2 {
+  color: orange;
+}
+
+li:first-child {
+  color: red;
+}
+
+li:last-child {
+  color: orange;
+}
+
+li:only-child {
+  color: olive;
+}
+.card-dark {
+  background: #333;
+  color: #fff;
+}
+
+p:first-of-type {
+  color: red;
+  padding: 2em;
+}
+
+p:last-of-type {
+  color: orange;
+  padding: 2em;
+}
+
+.item:only-of-type {
+  color: yellow;
+  padding: 2em;
+}
+
+/* li:nth-child(3n - 1) {
+  color: green;
+} */
+/* 
+li:nth-last-child(3n - 1) {
+  color: green;
+}
+
+li:nth-of-type(2n) {
+  color: blue;
+}
+
+li:nth-last-of-type(3n) {
+  color: purple;
+}
+
+p:not(.item) {
+  color: black;
+}
+
+p:empty {
+  background: red;
+  height: 10px;
+} */
+
+/* .input-dark[required] {
+  background: rebeccapurple;
+} */
+
+/* .input-dark[type='number'] {
+  background: green;
+} */
+
+/* .small-img[alt~='small'] {
+  height: 500px;
+} */
+
+/* .small-img[alt~='small'] {
+  height: 500px;
+} */
+
+/* button[class|='btn'] {
+  background: red;
+} */
+
+/* button[class^='btn'] {
+  background: red;
+} */
+
+/* button[class*='btn'] {
+  background: red;
+} */
+
+/* a[class$='big'] {
+  background: blue;
+} */
+
+/* p::first-letter {
+  color: red;
+  font-size: 2em;
+} */
+
+/* p::first-line {
+  color: red;
+  font-size: 2em;
+} */
+
+/* .input-dark::placeholder {
+  color: red;
+  padding: 2em;
+} */
+
+/* .big-text::before {
+  content: '"';
+  color: green;
+} */
+
+/* .big-text::after {
+  content: '"';
+} */
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+} */
+
+/* sticky navigation */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* input[type='text'],
+textarea,
+select {
+  font-size: 16px;
+  border-radius: 4px;
+} */
+
+/* nav a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #eee;
+  color: #333;
+  display: inline-block;
+} */
+
+/* input[type='checkbox']:checked + label,
+input[type='radio']:checked + label {
+  font-weight: bold;
+} */
+
+/* adding word "points" after points value on page Skills */
+.points::after {
+  content: ' points';
 }
